@@ -60,7 +60,7 @@ class Wordsmodel extends CI_Model
             $info = (array)$query->row_array();
 
             $config["upload_path"] = "./upload";
-            //$config["max_size"] = 1024000000000000000;
+            $config["max_size"] = 1024000000000000000;
             $config["allowed_types"] = "gif|jpg|png|mp3|ogv|ogg|mp4|rmvb|avi|wmv|JPG|mov";
             $config["encrypt_name"] = TRUE;
 
