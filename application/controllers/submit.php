@@ -46,7 +46,9 @@ class Submit extends CI_Controller
         //echo($cmd);
         exec($cmd, $status);
 
-        echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
+        echo($cmd);
+        echo($status);
+        //echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
 
 
     }
