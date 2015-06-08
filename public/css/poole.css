@@ -354,6 +354,10 @@ tbody tr:nth-child(odd) th {
   color: #6a9fb5;
 }
 
+.post-date a {
+ text-align: center;
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;

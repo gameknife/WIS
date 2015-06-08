@@ -14,5 +14,17 @@ class Commonmodel extends CI_Model
         $data['value'] = null;
         $this->load->view('welcome_message', $data);
     }
+
+    public function open_comment_page($id)
+    {
+        //$data['id'] = $id;
+
+        $this->load->model("Wordsmodel");
+        $comment = $this->Wordsmodel->get_form($id);
+
+        $data['comment'] = $comment;
+
+        $this->load->view('oneword',$data);
+    }
 }
 ?>

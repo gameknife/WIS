@@ -116,6 +116,17 @@
                           <?php
                           echo($words); ?>
                       </p>
+
+                      <?php
+                      if($avalue['video'] != null)
+                      {
+                      ?>
+
+                      <a class="post-date" style="text-align: center;" href="<?php echo("index.php/showcomment/showid/".$avalue['id'])?>">祝福短片  >>></a>
+
+                      <?php
+                      }
+                      ?>
                   </div>
                   <hr>
 

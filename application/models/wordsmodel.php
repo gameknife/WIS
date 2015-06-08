@@ -60,16 +60,17 @@ class Wordsmodel extends CI_Model
             $info = (array)$query->row_array();
 
             $config["upload_path"] = "./upload";
-            $config["max_size"] = 1024000000000;
+            //$config["max_size"] = 1024000000000000000;
             $config["allowed_types"] = "gif|jpg|png|mp3|ogv|ogg|mp4|rmvb|avi|wmv|JPG|mov";
             $config["encrypt_name"] = TRUE;
 
             $this->load->library('upload', $config);
 
-            var_dump($TABLE['id']);
+            //var_dump($TABLE['id']);
 
             if( $this->upload->do_upload('video') )
             {
+                //echo("file uploaded");
                 $data = $this->upload->data();
                 $urls = "/upload/".$data['file_name'];
 
@@ -83,6 +84,7 @@ class Wordsmodel extends CI_Model
             else
             {
                 $error = array("error"=>$this->upload->display_errors());
+                var_dump($error);
             }
         }
 

@@ -43,26 +43,31 @@
 <div class="content container">
     <div class="posts">
 
-            <h3 class="post-title">感谢！我们已经收到您的祝福！</h3>
-            <br>
+            <h3 class="post-title">感谢！<br>我们已经收到您的祝福！</h3>
 
-            <p><?php
-                echo($words);
-                ?>
-            </p>
+        <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
+
 
         <form action="/index.php/submit/submit_video" id="videoform" method="post" enctype="multipart/form-data">
             <input type="text" name="id" value="<?php echo($id); ?>" style="visibility: hidden">
         <br>
-        <h4 class="post-date">您还可以选择录一个短片给我们，我们将剪辑到一起，作为我们今生最珍贵的礼物。</h4>
-        <div class="post" style="margin: 0 10% 1em 10%;">
-            <input type="file" name="video" style="width:100%">
+        <h4 class="post-date">您还可以选择录制一个短片给我们，我们将会把所有的短片剪辑到一起，在婚礼上展示，作为我们今生最珍贵的礼物。</h4>
+        <div class="post" style="margin: 1em 0 1em 0; text-align: center;">
+            <input type="hidden" name="MAX_FILE_SIZE" value="50000000000">
+            <input type="file" name="video">
         </div>
-            <h4 class="post-date">点击发送祝福，稍等片刻。</h4>
+
+            <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
+
+            <h4 class="post-title">点击发送祝福，稍等片刻。</h4>
             <input type="submit" name="sub" value="发送祝福" style="
                 width: 80%;
     height: 10%;
     margin: 0em 10% 0em 10%;">
+            <hr>
+            <h4 class="post-title">或者直接返回首页。</h4>
+            <a class="post-date" href="/" style="text-align: center;">返回首页</a>
+
         </form>
 
     </div>
