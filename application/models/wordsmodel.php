@@ -85,7 +85,7 @@ class Wordsmodel extends CI_Model
                 $pos = strripos($urls,'.');
                 $purefile = substr($urls,0,$pos);
 
-                $cmd = 'ffmpeg -i '.$urls.' -b 800k '.$purefile.'.mp4';
+                $cmd = 'ffmpeg -i '.'/alidata/www/default'.$urls.' -b 800k '.'/alidata/www/default'.$purefile.'.mp4';
             }
             else
             {
