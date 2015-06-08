@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="/public/css/syntax.css">
     <link rel="stylesheet" href="/public/css/hyde.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
+    <link href="/public/css/floatbutton.css" rel="stylesheet">
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-
   </head>
 
 
     <body class="theme-base-0d">
+
     <audio src="/images/card/bgm1.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
       <div class="sidebar">
     <div class="container sidebar-sticky">
@@ -47,6 +47,37 @@
       <p>©K&K Studio 2015. All rights reserved.</p>
     </div>
   </div>
+
+    <aside class="media-wrap">
+        <span id="musicBtnTxt" style="display: none;">关闭</span>
+        <i id="musicBtn" class="music-btn on"></i>
+    </aside>
+    <script>
+        var audio = document.getElementById('autoplay');
+        var controller = document.getElementById('musicBtn');
+        var controllerHint = document.getElementById('musicBtnTxt');
+
+        function toggle_music() {
+
+            controllerHint.style.display = '';
+            if (audio.paused) {
+                audio.play();
+                controller.className = 'music-btn on';
+                controllerHint.innerHTML = '开始';
+            } else {
+                audio.pause();
+                controller.className = 'music-btn';
+                controllerHint.innerHTML = '关闭';
+            }
+
+            setTimeout(function() {
+                controllerHint.style.display = 'none';
+            }, 1000);
+
+        }
+
+        document.getElementById('musicBtn').addEventListener('click',toggle_music, false);
+    </script>
 
 
       <div class="content container">

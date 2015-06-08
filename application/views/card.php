@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
 	<link href="/public/css/islider.css" rel="stylesheet">
+    <link href="/public/css/floatbutton.css" rel="stylesheet">
 	<style>
 		body {
 			margin: 0;
@@ -13,104 +14,6 @@
 			font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
 		}
 		/*ul wrapper*/
-		#iSlider-wrapper {
-			height: 100%;
-			width: 100%;
-			overflow: hidden;
-			position: absolute;
-		}
-
-		#iSlider-wrapper ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			overflow: hidden;
-		}
-		#iSlider-wrapper li {
-			position: absolute;
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			overflow: hidden;
-			display: -webkit-box;
-			-webkit-box-pack: center;
-			-webkit-box-align: center;
-			list-style: none;
-		}
-		#iSlider-wrapper li  img{
-			max-width: 100%;
-			max-height: 100%;
-		}
-		.music-btn {
-		  	float: right;
-		  	width: 1.8333333333333rem;
-		  	height: 1.8333333333333rem;
-		  	background: url('/images/card/music-icon.png');
-		  	background-size: cover;
-		}
-		.music-btn.on {
-		  	-webkit-animation: reverseRotataZ 1.2s linear infinite;
-		}
-		.media-wrap {
-		  	overflow: hidden;
-		  	position: fixed;
-		  	top: 2.9166666666667rem;
-		  	right: 1.375rem;
-		  	z-index: 10000;
-		  	width: 6.5em;
-		  	height: 6.5em;
-		  	font-size: 16px;
-		}
-		.media-wrap span {
-			float: left;
-		  	height: 4em;
-		  	width: 4em;
-		  	line-height: 3rem;
-		  	color: #fff;
-		  	font-size: 1em;
-		}
-		.media-wrap i {
-			width: 2.5em;
-			height: 2.5em;
-		}
-		@-webkit-keyframes reverseRotataZ {
-		  	0% {
-		    	-webkit-transform: rotateZ(0deg);
-		  	}
-		  	100% {
-		    	-webkit-transform: rotateZ(-360deg);
-		  	}
-		}
-		/* Arrow */
-		#iSlider-arrow {
-			position: absolute;
-			width: 3em;
-			height: 3em;
-			left: 0;
-			right: 0;
-			bottom: 5%;
-			margin: 0 auto;
-			border-top: 2px solid #fff;
-			border-right: 2px solid #fff;
-			z-index: 10000;
-			opacity: 0.8;
-			-webkit-animation: nextPage 1.2s linear infinite;
-		}
-		@-webkit-keyframes nextPage {
-		  	0% {
-		    	-webkit-transform: translateY(40px) rotate(-45deg);
-		    	opacity: 0.8;
-		  	}
-		  	50% {
-		  		-webkit-transform: translateY(20px) rotate(-45deg);
-		  		opacity: 0.4;
-		  	}
-		  	100% {
-		    	-webkit-transform: translateY(10px) rotate(-45deg);
-		    	opacity: 0;
-		  	}
-		}
 	</style>
 </head>
 
@@ -121,6 +24,15 @@
 		<span id="musicBtnTxt" style="display: none;">关闭</span>
 		<i id="musicBtn" class="music-btn on"></i>
 	</aside>
+
+    <aside class="media-wrap1">
+        <i id="homeBtn" class="home-btn"></i>
+    </aside>
+
+    <aside class="media-wrap2">
+        <i id="autoBtn" class="auto-btn"></i>
+    </aside>
+    media-
 	<audio src="/images/card/bgm1.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
 	<div id="iSlider-arrow"></div>
 	<script src="/public/js/islider.js"></script>
@@ -157,26 +69,50 @@
 		var audio = document.getElementById('autoplay');
 		var controller = document.getElementById('musicBtn');
 		var controllerHint = document.getElementById('musicBtnTxt');
+        var autocontroller = document.getElementById('autoBtn');
+        function toggle_music() {
 
-		document.getElementById('musicBtn').addEventListener('touchstart', function() {
+            controllerHint.style.display = '';
+            if (audio.paused) {
+                audio.play();
+                controller.className = 'music-btn on';
+                controllerHint.innerHTML = '开始';
+            } else {
+                audio.pause();
+                controller.className = 'music-btn';
+                controllerHint.innerHTML = '关闭';
+            }
 
-			controllerHint.style.display = '';
-			if (audio.paused) {
-				audio.play();
-				controller.className = 'music-btn on';
-				controllerHint.innerHTML = '开始';
-			} else {
-				audio.pause();
-				controller.className = 'music-btn';
-				controllerHint.innerHTML = '关闭';
-			}
+            setTimeout(function() {
+                controllerHint.style.display = 'none';
+            }, 1000);
 
-			setTimeout(function() {
-				controllerHint.style.display = 'none';
-			}, 1000);
+        }
 
-		}, false);
+        function back_home() {
+            window.location.href='/';
+        }
 
+        function auto_play()
+        {
+            if( islider.isAutoplay === true )
+            {
+                autocontroller.className = 'auto-btn';
+                islider.isAutoplay = false;
+                islider.pause();
+
+            }
+            else
+            {
+                autocontroller.className = 'auto-btn on';
+                islider.isAutoplay = true;
+                islider.play();
+            }
+        }
+
+        document.getElementById('musicBtn').addEventListener('click',toggle_music, false);
+        document.getElementById('homeBtn').addEventListener('click',back_home, false);
+        document.getElementById('autoBtn').addEventListener('click',auto_play, false);
 	</script>
 </body>
 </html>
