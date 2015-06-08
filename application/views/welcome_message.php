@@ -12,52 +12,52 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="/style.css">
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-
-</head>
+    <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/syntax.css">
+    <link rel="stylesheet" href="/public/css/hyde.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
 
-  <body class="theme-base-0d">
-  <audio src="/images/card/bgm1.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+
+  </head>
+
+
+    <body class="theme-base-0d">
+    <audio src="/images/card/bgm1.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
+      <div class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about">
+            <img src="/images/static/title320.png" alt="Kaiming Yi" style="margin: auto auto 2rem auto;">
+        </div>
       <div class="sidebar-about">
-          <img src="/images/static/title320.png" alt="Kaiming Yi" style="margin: auto auto 2rem auto;">
+        <h1>
+          <a href="/">
+              易恺铭 & 徐凯
+          </a>
+        </h1>
+        <p class="lead">我们的婚礼邀请</p>
       </div>
-    <div class="sidebar-about">
-      <h1>
-        <a href="/">
-            易恺铭 & 徐凯
-        </a>
-      </h1>
-      <p class="lead">我们的婚礼邀请</p>
+      <nav>
+      <a class="sidebar-nav-item" href="/index.php/submit">> 给我们祝福的话语 <</a>
+      <a class="sidebar-nav-item" href="/index.php/showreel">> 看我们的照片 <</a>
+      <br>
+      </nav>
+      <p>©K&K Studio 2015. All rights reserved.</p>
     </div>
-    <nav>
-    <a class="sidebar-nav-item" href="/index.php/submit">> 给我们祝福的话语 <</a>
-    <a class="sidebar-nav-item" href="/index.php/showreel">> 看我们的照片 <</a>
-    <br>
-    </nav>
-    <p>©K&K Studio 2015. All rights reserved.</p>
   </div>
-</div>
 
 
-    <div class="content container">
-      <div class="posts">
+      <div class="content container">
+        <div class="posts">
 
-          <h3 class="post-title">谨定于<span style="color: #6a9fb5">2015年7月18日</span></h3>
-          <h3 class="post-title">农历<span style="color: #6a9fb5">六月初三星期六</span></h3>
-          <h3 class="post-title">中午12点</h3>
-          <h3 class="post-title">举行结婚喜宴</h3>
+            <h3 class="post-title">谨定于<span style="color: #6a9fb5">2015年7月18日</span></h3>
+            <h3 class="post-title">农历<span style="color: #6a9fb5">六月初三星期六</span></h3>
+            <h3 class="post-title">中午12点</h3>
+            <h3 class="post-title">举行结婚喜宴</h3>
 
-          <!-- Pattern Hr -->
+            <!-- Pattern Hr -->
           <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
 
 

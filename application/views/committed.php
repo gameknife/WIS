@@ -12,7 +12,7 @@
     </title>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
     <link rel="stylesheet" href="/public/css/poole.css">
     <link rel="stylesheet" href="/public/css/syntax.css">
     <link rel="stylesheet" href="/public/css/hyde.css">
