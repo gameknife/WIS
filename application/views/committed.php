@@ -53,7 +53,7 @@
         <br>
         <h4 class="post-date">您还可以选择录制一个短片给我们，我们将会把所有的短片剪辑到一起，在婚礼上展示，作为我们今生最珍贵的礼物。</h4>
         <div class="post" style="margin: 1em 0 1em 0; text-align: center;">
-            <input type="hidden" name="MAX_FILE_SIZE" value="50000">
+            <input type="hidden" name="MAX_FILE_SIZE" value="500000000">
             <input type="file" name="video">
         </div>
 
