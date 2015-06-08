@@ -1,0 +1,45 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>创建单个选择题</title>
+	
+    <script type="text/javascript">
+		
+    </script>
+
+</head>
+	
+<body>
+	
+    <script type="text/javascript">
+		var mark = 5;
+		var title = "";
+		var answers = "";
+		var rightAnserIndex = 0;
+		
+		function OnSelectFile()
+		{
+			
+			var widget = document.getElementById("SelectInsertPic");
+			var path = widget.value.replace(/\\/g, "/");
+			var qPicPiview = document.getElementById("Question_pic");
+			qPicPiview.src = "file:///"+ path;
+		}
+    </script>
+
+    <div id="step_1">
+                    <label>请填写该选择题分数:(
+                <input id="amount" style="IME-MODE: disabled; WIDTH: 30px; HEIGHT: 20px" onKeyUp="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="2" size="14" name="amount" type="text" />
+                )</label>
+    </div>
+    
+    <div id="step_2" >
+    	<content>请输入问题:</content>
+        <div>
+       	  <textarea style="WIDTH:480px;HEIGHT:120px;overflow-x:hidden;overflow-y:hidden;resize: none; font-size:16px"></textarea>
+  		  <input type="file" id="SelectInsertPic" onChange="OnSelectFile()" accept="图片/jpg,图片/png"  />
+        </div>
+        <input id="Question_pic" type="image"></div>
+    </div>
+    
+</body>
+</html>
