@@ -31,16 +31,16 @@
         <div class="sidebar-about">
             <img src="/images/static/title320.png" alt="Kaiming Yi" style="margin: auto auto 2rem auto;">
         </div>
-        <div class="sidebar-about">
+        <div class="sidebar-about" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">
             <h1>
                 <a href="/">
                     易恺铭 & 徐凯
                 </a>
             </h1>
-            <p class="lead">我们的婚礼邀请</p>
+            <p class="lead" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">我们的婚礼邀请</p>
         </div>
 
-        <p>©K&K Studio 2015. All rights reserved.</p>
+        <p style="font-size:75%; text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">©K&K Studio 2015. All rights reserved.</p>
     </div>
 </div>
 

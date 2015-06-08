@@ -21,7 +21,7 @@
 	<!-- Outer Canvas 外层画布 -->
 	<div id="iSlider-wrapper"></div>
 	<aside class="media-wrap">
-		<span id="musicBtnTxt" style="display: none;">关闭</span>
+		<span id="musicBtnTxt" style="display: none;"></span>
 		<i id="musicBtn" class="music-btn on"></i>
 	</aside>
 
@@ -32,7 +32,7 @@
     <aside class="media-wrap2">
         <i id="autoBtn" class="auto-btn"></i>
     </aside>
-    media-
+
 	<audio src="/images/card/bgm1.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
 	<div id="iSlider-arrow"></div>
 	<script src="/public/js/islider.js"></script>
@@ -72,20 +72,13 @@
         var autocontroller = document.getElementById('autoBtn');
         function toggle_music() {
 
-            controllerHint.style.display = '';
-            if (audio.paused) {
+            if (audio.paused === true) {
                 audio.play();
                 controller.className = 'music-btn on';
-                controllerHint.innerHTML = '开始';
             } else {
                 audio.pause();
                 controller.className = 'music-btn';
-                controllerHint.innerHTML = '关闭';
             }
-
-            setTimeout(function() {
-                controllerHint.style.display = 'none';
-            }, 1000);
 
         }
 

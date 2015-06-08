@@ -31,7 +31,7 @@
     float: right;
     width: 2rem;
     height: 2rem;
-    background: url('/images/card/music-icon.png');
+    background: url('/images/card/music-icon-off.png');
     background-size: cover;
 }
 .home-btn {
@@ -43,12 +43,15 @@
 }
 .auto-btn {
     float: right;
+
     width: 2rem;
     height: 2rem;
     background: url('/images/card/auto-icon.png');
     background-size: cover;
 }
 .music-btn.on {
+    background: url('/images/card/music-icon-on.png');
+    background-size: cover;
     -webkit-animation: reverseRotataZ 1.2s linear infinite;
 }
 .auto-btn.on {
@@ -61,41 +64,31 @@
     right: 1.375rem;
     z-index: 10000;
     width: 6.5em;
-    height: 6.5em;
-    font-size: 16px;
-}
-.media-wrap1 {
-    overflow: hidden;
-    position: fixed;
-    top: 1.5rem;
-    left: -3rem;
-    z-index: 10000;
-    width: 6.5em;
-    height: 6.5em;
+    height: 3em;
     font-size: 16px;
 }
 .media-wrap2 {
     overflow: hidden;
     position: fixed;
-    top: 1.5rem;
-    left: 3rem;
+    top: 4.5rem;
+    right: 1.375rem;
     z-index: 10000;
     width: 6.5em;
-    height: 6.5em;
+    height: 3em;
     font-size: 16px;
 }
-.media-wrap span {
-    float: left;
-    height: 4em;
-    width: 4em;
-    line-height: 3rem;
-    color: #fff;
-    font-size: 1em;
+.media-wrap1 {
+    overflow: hidden;
+    position: fixed;
+    top: 7.5rem;
+    right: 1.375rem;
+    z-index: 10000;
+    width: 6.5em;
+    height: 3em;
+    font-size: 16px;
 }
-.media-wrap i {
-    width: 2.5em;
-    height: 2.5em;
-}
+
+
 @-webkit-keyframes reverseRotataZ {
     0% {
         -webkit-transform: rotateZ(0deg);

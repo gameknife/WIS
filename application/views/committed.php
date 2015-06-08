@@ -28,14 +28,14 @@
 
 <div class="sidebar">
     <div class="container sidebar-sticky">
-        <div class="sidebar-about">
+        <div class="sidebar-about" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">
             <h1>
-                成功！
+                成功
             </h1>
-            <p class="lead">易恺铭 & 徐凯的婚礼邀请</p>
+            <p class="lead" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">易恺铭 & 徐凯的婚礼邀请</p>
         </div>
 
-        <p>©K&K Studio 2015. All rights reserved.</p>
+        <p style="font-size:75%; text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">©K&K Studio 2015. All rights reserved.</p>
     </div>
 </div>
 
@@ -55,6 +55,8 @@
         <div class="post" style="margin: 1em 0 1em 0; text-align: center;">
             <input type="hidden" name="MAX_FILE_SIZE" value="500000000">
             <input type="file" name="video">
+            <hr>
+            <p style="font-size: 75%">温馨提醒<br>由于服务器带宽较小，因此请保证短片尽量不超过1分钟。在发送前最好使用imovie等软件先期压缩，否则过大的文件尺寸会导致传输时间长。</p>
         </div>
 
             <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
@@ -66,6 +68,7 @@
     margin: 0em 10% 0em 10%;">
             <hr>
             <h4 class="post-title">或者直接返回首页。</h4>
+            <br>
             <a class="post-date" href="/" style="text-align: center;">返回首页</a>
 
         </form>

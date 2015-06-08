@@ -25,31 +25,32 @@
 
     <body class="theme-base-0d">
 
-    <audio src="/images/card/bgm1.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
+
       <div class="sidebar">
     <div class="container sidebar-sticky">
         <div class="sidebar-about">
             <img src="/images/static/title320.png" alt="Kaiming Yi" style="margin: auto auto 2rem auto;">
         </div>
-      <div class="sidebar-about">
+      <div class="sidebar-about" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">
         <h1>
           <a href="/">
               易恺铭 & 徐凯
           </a>
         </h1>
-        <p class="lead">我们的婚礼邀请</p>
+        <p class="lead" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">我们的婚礼邀请</p>
       </div>
       <nav>
-      <a class="sidebar-nav-item" href="/index.php/submit">> 给我们祝福的话语 <</a>
-      <a class="sidebar-nav-item" href="/index.php/showreel">> 看我们的照片 <</a>
+      <a class="sidebar-nav-item" href="/index.php/submit" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">> 给我们祝福 <</a>
+      <a class="sidebar-nav-item" href="/index.php/showreel" style="text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">> 我们的照片 <</a>
       <br>
       </nav>
-      <p>©K&K Studio 2015. All rights reserved.</p>
+      <p style="font-size:75%; text-shadow: 0 2px 3px rgba(0,0,0,0.3),0 1px 18px rgba(0,0,0,0.3);">©K&K Studio 2015. All rights reserved.</p>
     </div>
   </div>
 
+      <audio src="/images/card/bgm2.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
     <aside class="media-wrap">
-        <span id="musicBtnTxt" style="display: none;">关闭</span>
+        <span id="musicBtnTxt" style="display: none;"></span>
         <i id="musicBtn" class="music-btn on"></i>
     </aside>
     <script>
@@ -59,20 +60,15 @@
 
         function toggle_music() {
 
-            controllerHint.style.display = '';
-            if (audio.paused) {
+            if (audio.paused === true) {
                 audio.play();
                 controller.className = 'music-btn on';
-                controllerHint.innerHTML = '开始';
             } else {
                 audio.pause();
                 controller.className = 'music-btn';
-                controllerHint.innerHTML = '关闭';
             }
 
-            setTimeout(function() {
-                controllerHint.style.display = 'none';
-            }, 1000);
+
 
         }
 
@@ -93,10 +89,10 @@
 
 
           <h3 class="post-title">新郎：易恺铭</h3>
-          <h3 class="post-title">新娘：徐凯</h3>
+          <h3 class="post-title">新娘：徐&nbsp&nbsp&nbsp&nbsp凯</h3>
           <br><br>
 
-          <h3 class="post-title">我们诚挚的邀请您及家人为我们祝福！</h3>
+          <h3 class="post-title">我们诚挚地邀请您及家人为我们祝福！</h3>
 
           <!-- Pattern Hr -->
           <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
@@ -139,6 +135,10 @@
                   $avalue = (array)$value;
                   $name = $avalue['name'];
                   $words = $avalue['words'];
+                  if($name == null)
+                  {
+                      continue;
+                  }
                   ?>
 
                   <div class="post">
@@ -152,8 +152,8 @@
                       if($avalue['video'] != null)
                       {
                       ?>
-
-                      <a class="post-date" style="text-align: center;" href="<?php echo("index.php/showcomment/showid/".$avalue['id'])?>">祝福短片  >>></a>
+                      <br>
+                      <a class="post-date" style="text-align: center;" href="<?php echo("index.php/showcomment/showid/".$avalue['id'])?>">TA的祝福短片  >>></a>
 
                       <?php
                       }
