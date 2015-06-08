@@ -39,17 +39,14 @@ class Submit extends CI_Controller
         $this->load->model("Wordsmodel");
         $cmd = $this->Wordsmodel->insert_new_video( $_POST );
 
-        //$this->load->model("Commonmodel");
-        //$this->Commonmodel->open_welcome_page();
-        //base_url()
+        // execute object format -> mp4
+        if($cmd != null)
+        {
+            exec($cmd, $status);
+        }
 
-        //echo($cmd);
-        exec($cmd, $status);
-
-        echo($cmd);
-        //echo($status);
-        //echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
-
+        // jump to success page
+        echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
 
     }
 }

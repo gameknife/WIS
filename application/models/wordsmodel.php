@@ -71,20 +71,21 @@ class Wordsmodel extends CI_Model
 
             if( $this->upload->do_upload('video') )
             {
-                //echo("file uploaded");
                 $data = $this->upload->data();
                 $urls = "/upload/".$data['file_name'];
+                // make mp4 file name
+                $pos = strripos($urls,'.');
+                $purefile = substr($urls,0,$pos);
 
-                $info['video'] = $urls;
+                // db url use new mp4 file
+                $info['video'] = $purefile.'.mp4';
                 $info['edittime'] = date("Y-m-d h:i:s");
                 $info['changetime'] = $info['changetime'] + 1;
 
                 $this->db->where('id',$info['id']);
                 $this->db->update("words", $info);
 
-                $pos = strripos($urls,'.');
-                $purefile = substr($urls,0,$pos);
-
+                // make the ffmpeg cmdline and return
                 $cmd = 'ffmpeg -i '.'/alidata/www/default'.$urls.' -b 800k '.'/alidata/www/default'.$purefile.'.mp4';
             }
             else
