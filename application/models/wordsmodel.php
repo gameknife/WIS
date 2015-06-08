@@ -49,6 +49,7 @@ class Wordsmodel extends CI_Model
 
     function insert_new_video($TABLE)
     {
+        $cmd = '';
         // add file
         $this->db->select('*');
         $this->db->where('id', $TABLE['id']);
@@ -80,12 +81,19 @@ class Wordsmodel extends CI_Model
 
                 $this->db->where('id',$info['id']);
                 $this->db->update("words", $info);
+
+                $pos = strripos($urls,'.');
+                $purefile = substr($urls,0,$pos);
+
+                $cmd = 'ffmpeg -i '.$urls.' -b 800k '.$purefile.'.mp4';
             }
             else
             {
                 $error = array("error"=>$this->upload->display_errors());
                 var_dump($error);
             }
+
+            return $cmd;
         }
 
 
