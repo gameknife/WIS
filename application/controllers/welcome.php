@@ -23,8 +23,11 @@ class Welcome extends CI_Controller {
 
         if(!isset($_SESSION['guest']))
         {
-            $guest_name = $_GET['guest'];
-            $_SESSION['guest'] = $guest_name;
+            if(count($_GET)>0)
+            {
+                $guest_name = $_GET['guest'];
+                $_SESSION['guest'] = $guest_name;
+            }
         }
         else
         {
