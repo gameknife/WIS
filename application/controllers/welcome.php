@@ -19,6 +19,18 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+        session_start();
+
+        if(!isset($_SESSION['guest']))
+        {
+            $guest_name = $_GET['guest'];
+            $_SESSION['guest'] = $guest_name;
+        }
+        else
+        {
+
+        }
+
         $this->load->model("Commonmodel");
         $this->Commonmodel->open_welcome_page();
 	}

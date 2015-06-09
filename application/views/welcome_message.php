@@ -79,6 +79,22 @@
       <div class="content container">
         <div class="posts">
 
+            <?php
+            //session_start();
+
+            if(isset($_SESSION['guest']))
+            {
+                ?>
+            <h3 class="post-title">
+                恭请<?php echo($_SESSION['guest']);?>
+                <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
+
+            </h3>
+
+            <?php
+            }
+            ?>
+
             <h3 class="post-title">谨定于<span style="color: #6a9fb5">2015年7月18日</span></h3>
             <h3 class="post-title">农历<span style="color: #6a9fb5">六月初三星期六</span></h3>
             <h3 class="post-title">中午12点</h3>
