@@ -79,7 +79,7 @@ class Wordsmodel extends CI_Model
                     $purefilet = substr($old_url, 0, $post);
 
                     exec('rm ' . '/alidata/www/default' . $purefilet . '.*', $status);
-                    echo ('rm ' . '/alidata/www/default' . $purefilet . '.*');
+                    //echo ('rm ' . '/alidata/www/default' . $purefilet . '.*');
                 }
 
                 // db url use new mp4 file
@@ -93,8 +93,8 @@ class Wordsmodel extends CI_Model
                 // mv file to tmp place
                 $orgfile = '/alidata/www/default' . $urls;
                 $tmpfile = '/alidata/www/default' . $urls . '.tmp';
-                exec('mv ' . $orgfile . $tmpfile, $status);
-                echo ('mv ' . $orgfile . $tmpfile);
+                exec('mv ' . $orgfile . ' ' . $tmpfile, $status);
+                //echo ('mv ' . $orgfile . $tmpfile);
 
                 // make the ffmpeg cmdline and return
                 $cmd = 'ffmpeg -i ' . $tmpfile . ' -vcodec libx264 -vpre libx264-medium -b 400k ' . '/alidata/www/default' . $purefile . '.mp4';
