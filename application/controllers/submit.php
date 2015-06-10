@@ -53,15 +53,17 @@ class Submit extends CI_Controller
         $this->load->model("Wordsmodel");
         $cmd = $this->Wordsmodel->insert_new_video( $_POST );
 
+        // jump to success page
+        echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
+        // stop client, server continue ffmpeg
+        fastcgi_finish_request();
+
         // execute object format -> mp4
         if($cmd != null)
         {
             exec($cmd, $status);
             echo($cmd);
         }
-
-        // jump to success page
-        //echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
 
     }
 }
