@@ -388,12 +388,15 @@ tbody tr:nth-child(odd) th {
     font-weight: 400;
     color: #303030;
     text-align: center;
+    font-family: "PT Sans", "STXihei", "STHeiti Light", "Microsoft Yahei", Helvetica, Arial, sans-serif ;
 }
 
 .input-post-content {
     font-size: 100%;
     font-weight: 400;
     color: #303030;
+    text-align: center;
+    font-family: "PT Sans", "STXihei", "STHeiti Light", "Microsoft Yahei", Helvetica, Arial, sans-serif ;
 }
 
 /*

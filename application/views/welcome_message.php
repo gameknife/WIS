@@ -87,10 +87,8 @@
                 ?>
             <h3 class="post-title">
                 恭请<?php echo($_SESSION['guest']);?>
-                <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
-
             </h3>
-
+                <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
             <?php
             }
             ?>

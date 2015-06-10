@@ -102,7 +102,23 @@ class Wordsmodel extends CI_Model
 
         //return $this->db->insert_id();
     }
-	
+
+    function get_words($name)
+    {
+        $this->db->select('words');
+        $this->db->where('name', $name);
+        $this->db->limit(1);
+        $this->db->from('words');
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->row_array();
+        }
+
+        return null;
+    }
+
 	function get_form($id)
 	{
 		$this->db->select('*');

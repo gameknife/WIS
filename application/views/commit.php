@@ -23,7 +23,6 @@
 
 </head>
 
-
 <body class="theme-base-0d">
 
 <div class="sidebar">
@@ -53,13 +52,35 @@
             <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
             <h4 class="post-date">请在这里留下您的大名</h4>
             <div class="post" style="margin: 0 10% 1em 10%;">
-                <input class="input-post-name" type="text" name="name" style="width:100%">
+
+                <?php
+                if(isset($_SESSION['guest'])) {
+                    echo '<input class="input-post-name" type="text" name="name" style="width:100%" value="'.$_SESSION['guest'].'"">';
+                }
+                else
+                {
+                    echo '<input class="input-post-name" type="text" name="name" style="width:100%">';
+                }
+                ?>
+
             </div>
             <br>
             <h4 class="post-date">请在这里留下您对我们的祝福</h4>
 
             <div class="post" style="margin: 0 10% 1em 10%;">
-                <textarea class="input-post-content" name="words" form="usrform" rows="4" cols="30" style="width:100%"></textarea>
+
+
+                <?php
+                if(isset($_SESSION['guest']) && count($data))
+                {
+                    echo ' <textarea class="input-post-content" name="words" form="usrform" rows="4" cols="30" style="width:100%">'.$data['words']['words'].'</textarea>';
+                }
+                else
+                {
+                    echo '<textarea class="input-post-content" name="words" form="usrform" rows="4" cols="30" style="width:100%"></textarea>';
+                }
+                ?>
+
                 <!--<input type="text" name="username" style="width:100%;height:150px;">-->
             </div>
 
@@ -68,7 +89,7 @@
 
             <hr>
             <h4 class="post-date">点击发送祝福，稍等片刻。</h4>
-            <input type="submit" name="sub" value="发送祝福" style="
+            <input class="input-post-content" type="submit" name="sub" value="发送祝福" style="
     width: 80%;
     height: 10%;
     margin: 0em 10% 0em 10%;">

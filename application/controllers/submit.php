@@ -4,7 +4,17 @@ class Submit extends CI_Controller
 {
     function index()
     {
-        $this->load->view('commit');
+        session_start();
+
+        $array = array();
+        if(isset($_SESSION['guest']))
+        {
+            $this->load->model("Wordsmodel");
+            $words = $this->Wordsmodel->get_words($_SESSION['guest']);
+            $array['words'] = $words;
+        }
+        $data['data'] = $array;
+        $this->load->view('commit',$data);
     }
 	
 	function view_one_form($id)
@@ -24,9 +34,13 @@ class Submit extends CI_Controller
 	
 	function submit_form()
 	{
-		// testing
-		// echo var_dump( $_POST );
-		// return;
+        // submit here, can update session now
+        session_start();
+        if(!isset($_SESSION['guest']))
+        {
+            $_SESSION['guest'] = $_POST['name'];
+        }
+
 	
 		$this->load->model("Wordsmodel");
 		$id = $this->Wordsmodel->insert_new_form( $_POST );

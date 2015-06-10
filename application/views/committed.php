@@ -54,7 +54,7 @@
         <h4 class="post-date">您还可以选择录制一个短片给我们，我们将会把所有的短片剪辑到一起，在婚礼上展示，作为我们今生最珍贵的礼物。</h4>
         <div class="post" style="margin: 1em 0 1em 0; text-align: center;">
             <input type="hidden" name="MAX_FILE_SIZE" value="500000000">
-            <input type="file" name="video">
+            <input class="input-post-content" type="file" name="video">
             <hr>
             <p style="font-size: 75%">温馨提醒<br>由于服务器带宽较小，因此请保证短片尽量不超过1分钟。在发送前最好使用imovie等软件先期压缩，否则过大的文件尺寸会导致传输时间长。</p>
         </div>
@@ -62,7 +62,7 @@
             <br/><img style="max-height:35px; max-width:60%;" src="/images/static/divider.png" /><br/>
 
             <h4 class="post-title">点击发送祝福，稍等片刻。</h4>
-            <input type="submit" name="sub" value="发送祝福" style="
+            <input class="input-post-content" type="submit" name="sub" value="发送祝福" style="
                 width: 80%;
     height: 10%;
     margin: 0em 10% 0em 10%;">
