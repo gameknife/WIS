@@ -109,7 +109,9 @@ class Submit extends CI_Controller
 
             <h3 class="post-title">感谢！<br>我们已经收到您的短片！</h3>
             <hr>
-            <p style="font-size: 75%">温馨提醒<br>短片已经成功上传，目前服务器正在转码，请稍等。</p>
+            <p style="font-size: 75%">温馨提醒<br>短片已经成功上传，在首页您的祝福条目中可以看到。</p>
+            <hr>
+            <a class="post-date" href="/" style="text-align: center;">返回首页</a>
     </div>
 </div>
 
@@ -126,7 +128,7 @@ EOT;
         if($cmd != null)
         {
             exec($cmd, $status);
-            echo($cmd);
+            //echo($cmd);
         }
 
     }
