@@ -10,7 +10,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: #fff;
+            background: #202020;
             overflow: hidden;
             font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
         }
@@ -83,7 +83,8 @@ function readimgs($filedir)
             dom: document.getElementById("iSlider-wrapper"),
             isVertical: true,
             isLooping: true,
-            animateType: 'card',
+            animateType: 'default',
+            useZoom: true,
             onslidechange: function (idx) {
 
                 if (this.isLooping === false) {
