@@ -52,6 +52,19 @@
             <input type="text" name="id" value="<?php echo($id); ?>" style="visibility: hidden">
         <br>
         <h4 class="post-date">您还可以选择录制一个短片给我们，我们将会把所有的短片剪辑到一起，在婚礼上展示，作为我们今生最珍贵的礼物。</h4>
+
+            <?php
+            if($video != null)
+            {
+                ?>
+                <p style="font-size: 75%">提示<br>您已经上传过短片，如需要更新请选择短片上传，否则直接返回首页。谢谢！</p>
+                <video src="<?php echo($video) ?>" controls="controls" width="100%">
+                    your browser does not support the video tag
+                </video>
+            <?php
+            }
+            ?>
+
         <div class="post" style="margin: 1em 0 1em 0; text-align: center;">
             <input type="hidden" name="MAX_FILE_SIZE" value="500000000">
             <input class="input-post-content" type="file" name="video">
