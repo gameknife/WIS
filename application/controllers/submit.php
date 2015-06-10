@@ -108,9 +108,8 @@ class Submit extends CI_Controller
     <div class="posts">
 
             <h3 class="post-title">感谢！<br>我们已经收到您的短片！</h3>
-            <p style="font-size: 75%">温馨提醒<br>短片已经成功上传，目前服务器正在转码，您可以回到首页，稍后转码成功后即可浏览。</p>
             <hr>
-            <a class="post-date" href="/" style="text-align: center;">返回首页</a>
+            <p style="font-size: 75%">温馨提醒<br>短片已经成功上传，目前服务器正在转码，请稍等。</p>
     </div>
 </div>
 
@@ -121,7 +120,7 @@ class Submit extends CI_Controller
 EOT;
 
 
-        fastcgi_finish_request();
+        //fastcgi_finish_request();
 
         // execute object format -> mp4
         if($cmd != null)
