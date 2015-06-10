@@ -54,8 +54,12 @@ class Submit extends CI_Controller
         $cmd = $this->Wordsmodel->insert_new_video( $_POST );
 
         // jump to success page
-        echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
+        //echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
         // stop client, server continue ffmpeg
+
+        // add a jump button
+        $this->load->view("uploaded");
+
         fastcgi_finish_request();
 
         // execute object format -> mp4
