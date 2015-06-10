@@ -57,10 +57,11 @@ class Submit extends CI_Controller
         if($cmd != null)
         {
             exec($cmd, $status);
+            echo($cmd);
         }
 
         // jump to success page
-        echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
+        //echo ("<script>window.location.href='".$this->config->site_url()."'</script>");
 
     }
 }
