@@ -12,6 +12,7 @@ class Commonmodel extends CI_Model
         $QUERY_RESULT = $this->Wordsmodel->get_all_forms();
         $data['QUERY_RESULT'] = $QUERY_RESULT;
         $data['value'] = null;
+        $data['use_ty'] = false;
         $this->load->view('welcome_message', $data);
     }
 

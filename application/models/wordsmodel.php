@@ -58,7 +58,8 @@ class Wordsmodel extends CI_Model
 
             $config["upload_path"] = "./upload";
             $config["max_size"] = 1024000000000000000;
-            $config["allowed_types"] = "gif|jpg|png|mp3|ogv|ogg|mp4|rmvb|avi|wmv|JPG|mov";
+            //$config["allowed_types"] = "ogv|OGV|mp4|MP4|rmvb|avi|AVI|wmv|WMV|mov|MOV";
+            $config["allowed_types"] = "*";
             $config["encrypt_name"] = TRUE;
 
             $this->load->library('upload', $config);

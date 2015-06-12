@@ -4,15 +4,17 @@
     <meta charset="utf-8"/>
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/hyde.css">
     <link href="/public/css/islider.css" rel="stylesheet">
     <link href="/public/css/floatbutton.css" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
             padding: 0;
             background: #202020;
             overflow: hidden;
-            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
         }
 
         /*ul wrapper*/
@@ -29,7 +31,7 @@ function readimgs($filedir)
             if (is_dir($filedir . "/" . $file) AND ($file != ".") AND ($file != "..")) {
                 showDir($filedir . "/" . $file);
             } else if (($file != ".") AND ($file != "..")) {
-                array_push($result, '{content: "/' . $filedir . "/" . $file . '"}');
+                array_push($result, '{\'content\': \'<img src="/' . $filedir . "/" . $file . '" />\'}');
             }
         }
         $dir->close();
@@ -63,6 +65,16 @@ function readimgs($filedir)
 <script>
     // php construct files
     var list = [
+        { 'content' : '<div>' +
+        '<h5 style="color:#777777">< 操作说明 ></h5>' +
+        '<h4 style="color:#aaaaaa">垂直拖拽滑动切换照片</h4>' +
+        '<h4 style="color:#aaaaaa">键盘上下键切换照片</h4>' +
+        '<h4 style="color:#aaaaaa">快速双击图片放大</h4><br>' +
+        '<img width=25em src="/images/card/music-icon-on.png"/><p style="color:#aaaaaa">&nbsp&nbsp播放/暂停音乐</p>' +
+        '<img width=25em src="/images/card/auto-icon.png"/><p style="color:#aaaaaa">&nbsp&nbsp幻灯片播放</p>' +
+        '<img width=25em src="/images/card/back-icon.png"/><p style="color:#aaaaaa">&nbsp&nbsp返回首页</p>' +
+        '<h4 style="color:#777777; font-size: 50%">您第一次加载消耗800KB流量，将所有照片看完仅需3MB流量，可在数据网络下放心滑动~</h4>' +
+        '</div>'},
         <?php
             $files = readimgs('images/card/photos');
             foreach( $files as $file )
@@ -78,7 +90,7 @@ function readimgs($filedir)
         {
 
 
-            type: 'pic',
+            type: 'dom',
             data: list,
             dom: document.getElementById("iSlider-wrapper"),
             isVertical: true,

@@ -32,7 +32,7 @@
  */
 
 html {
-  font-family: "PT Sans", "STXihei", "STHeiti Light", "Microsoft Yahei", Helvetica, Arial, sans-serif ;
+  font-family: "PT Sans", "STHeiti Light", "Microsoft Yahei", "STXihei", Helvetica, Arial, sans-serif ;
 }
 @media (min-width: 1000em) {
   html {
@@ -57,7 +57,7 @@ html {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
-  background-color: #202020;
+  background-color: #6a9fb5;
 }
 @media (min-width: 1000em) {
   .sidebar {

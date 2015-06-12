@@ -23,7 +23,7 @@ class Welcome extends CI_Controller {
 
         if(!isset($_SESSION['guest']))
         {
-            if(count($_GET)>0)
+            if(array_key_exists('guest', $_GET))
             {
                 $guest_name = $_GET['guest'];
                 $_SESSION['guest'] = $guest_name;
@@ -32,6 +32,19 @@ class Welcome extends CI_Controller {
         else
         {
 
+        }
+
+        if(array_key_exists('city', $_GET))
+        {
+            $city = $_GET['city'];
+            $_SESSION['city'] = $city;
+        }
+
+        // login count
+        if(isset($_SESSION['guest']))
+        {
+            $this->load->model("Guestmodel");
+            $this->Guestmodel->add_login_time($_SESSION['guest']);
         }
 
         $this->load->model("Commonmodel");

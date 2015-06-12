@@ -50,6 +50,8 @@ class Submit extends CI_Controller
 
     function submit_video()
     {
+        ignore_user_abort();
+
         $this->load->model("Wordsmodel");
         $cmd = $this->Wordsmodel->insert_new_video( $_POST );
 
